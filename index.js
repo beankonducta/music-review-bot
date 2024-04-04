@@ -85,6 +85,9 @@ const search = async (artist, album, track) => {
         console.log(error);
         return null;
     });
+    if (!result || !result.data.results.length) {
+        return null;
+    }
     const data = {
         album: result.data.results[0].title,
         year: result.data.results[0].year,
