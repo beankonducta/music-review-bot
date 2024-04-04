@@ -33,7 +33,6 @@ discordClient.once('ready', async () => {
             required: true,
         }],
     }]);
-    console.log('The command was registered globally!');
 });
 
 discordClient.on('interactionCreate', async interaction => {
