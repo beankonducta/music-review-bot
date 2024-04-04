@@ -109,7 +109,7 @@ async function createReview(musicData) {
             role: 'user', content: `
         Write a review of the following album: ${musicData.album}. 
         Please take into consideration the genre, ${musicData.genre} and style, 
-        ${musicData.style}. Write in the voice of a pitchfork reviewer. 
+        ${musicData.style}. Write in the voice of The Needle Drop. 
         This is a totally fake review, do not use real online reviews. 
         Do not use the word pitchfork. 
         Make the review entirely random, do not put any bias towards doing a positive or negative review.
