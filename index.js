@@ -43,11 +43,20 @@ discordClient.on('interactionCreate', async interaction => {
     if (commandName === 'review') {
         const artist = interaction.options.getString('artist');
         const album = interaction.options.getString('album');
+
         // Do something with the artist and album
         // For example, you can send a message with the provided artist and album
-        await interaction.deferReply({ ephemeral: true });
+        await interaction.deferReply({ ephemeral: false });
         const musicData = await search(artist, album);
+        if(!musicData) {
+            await interaction.editReply('No results found.');
+            return;
+        }
         const review = await createReview(musicData);
+        if(!review) {
+            await interaction.editReply('Error! No review generated.');
+            return;
+        }
         const cover = musicData.cover;
         const embed = new EmbedBuilder()
         .setColor(0x0099FF)
@@ -71,12 +80,11 @@ discordClient.on('interactionCreate', async interaction => {
 
 discordClient.login(process.env.DISCORD_TOKEN);
 
-let artist = "";
-let album = "";
-let track = "";
-
 const search = async (artist, album, track) => {
-    let result = await discogsClient.database().search({ title: album, artist: artist });
+    let result = await discogsClient.database().search({ title: album, artist: artist }).catch((error) => {
+        console.log(error);
+        return null;
+    });
     const data = {
         album: result.data.results[0].title,
         year: result.data.results[0].year,
@@ -106,6 +114,9 @@ async function createReview(musicData) {
         in the format: SCORE: score/10.`
         }],
         model: 'gpt-4-0125-preview',
+    }).catch((error) => {
+        console.log(error);
+        return null;
     });
     return chatCompletion.choices[0].message.content;
 }
