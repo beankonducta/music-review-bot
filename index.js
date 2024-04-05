@@ -110,8 +110,7 @@ async function createReview(musicData) {
         Write a review of the following album: ${musicData.album}. 
         Please take into consideration the genre, ${musicData.genre} and style, 
         ${musicData.style}.
-        Write the review in the voice of your choosing. Get wild with it,
-        you can be a pirate or a angry child or a robot or whatever else you can think of.
+        Write the review in the voice of your choosing.
         This is a totally fake review, do not use real online reviews. 
         Flip a coin and either say only bad things about the album or mediocre to good things
         about it.
