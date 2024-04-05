@@ -114,7 +114,7 @@ async function createReview(musicData) {
         This is a totally fake review, do not use real online reviews. 
         Do not use the word pitchfork. 
         Only say bad things about the album.
-        Keep it to 2-3 sentences and at the end, give it a rounded score between 0 and 10,
+        Keep it to 2-3 sentences and at the end, after a few new lines, give it a rounded score between 0 and 10,
         in the format: SCORE: score/10.`
         }],
         model: 'gpt-4-0125-preview',
