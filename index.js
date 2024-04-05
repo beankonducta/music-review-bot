@@ -112,8 +112,7 @@ async function createReview(musicData) {
         ${musicData.style}. Write in the voice of a really stupid person.
         Write the review in all caps with lots of spelling and grammar errors.
         This is a totally fake review, do not use real online reviews. 
-        Do not use the word pitchfork. 
-        Only say bad things about the album.
+        Only say bad to mediocre things about the album.
         Keep it to 2-3 sentences and at the end, after a few new lines, give it a rounded score between 0 and 10,
         in the format: SCORE: score/10.`
         }],
