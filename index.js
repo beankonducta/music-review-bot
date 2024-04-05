@@ -110,10 +110,13 @@ async function createReview(musicData) {
         Write a review of the following album: ${musicData.album}. 
         Please take into consideration the genre, ${musicData.genre} and style, 
         ${musicData.style}.
-        Write the review in all caps with lots of spelling and grammar errors.
+        Write the review in the voice of your choosing. Get wild with it,
+        you can be a pirate or a angry child or a robot or whatever else you can think of.
         This is a totally fake review, do not use real online reviews. 
-        Only say bad to mediocre things about the album.
-        Keep it to 2-3 sentences and at the end, after a few new lines, give it a rounded score between 0 and 10,
+        Flip a coin and either say only bad things about the album or mediocre to good things
+        about it.
+        Keep it to 2-3 sentences and at the end, after a few new lines, give 
+        it a rounded score between 0 and 10,
         in the format: SCORE: score/10.`
         }],
         model: 'gpt-4-0125-preview',
