@@ -104,6 +104,7 @@ const openai = new OpenAI({
 });
 
 async function createReview(musicData) {
+    const randomNumberBetween0and10 = Math.round(Math.floor(Math.random() * 11));
     const chatCompletion = await openai.chat.completions.create({
         messages: [{
             role: 'user', content: `
@@ -112,11 +113,10 @@ async function createReview(musicData) {
         ${musicData.style}.
         Write the review in the voice of your choosing.
         This is a totally fake review, do not use real online reviews. 
-        Flip a coin and either say only bad things about the album or mediocre to good things
-        about it.
+        Base the review around the score of ${randomNumberBetween0and10}.
         Keep it to 2-3 sentences and at the end, after a few new lines, give 
         it a rounded score between 0 and 10,
-        in the format: SCORE: score/10.`
+        in the format: SCORE: ${randomNumberBetween0and10}/10.`
         }],
         model: 'gpt-4-0125-preview',
     }).catch((error) => {
