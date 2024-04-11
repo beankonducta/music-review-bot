@@ -108,11 +108,7 @@ async function createReview(musicData) {
     const chatCompletion = await openai.chat.completions.create({
         messages: [{
             role: 'user', content: `
-        Write a review of the following album: ${musicData.album}. 
-        Please take into consideration the genre, ${musicData.genre} and style, 
-        ${musicData.style}.
-        Write the review in the voice of your choosing.
-        This is a totally fake review, do not use real online reviews. 
+        Write a pitchfork review of the following album: ${musicData.album}.
         Base the review around the score of ${randomNumberBetween0and10}.
         Keep it to 2-3 sentences and at the end, after a few new lines, give 
         it a rounded score between 0 and 10,
