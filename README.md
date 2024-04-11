@@ -1,12 +1,11 @@
-## Discord music review bot
+# Discord music review bot
 
-# Uses Discogs api to pull music data and Openai for writing reviews.
-
+## Uses Discogs api to pull music data and Openai for writing reviews.
 
 Usage (in Discord):
 `/review the fall of troy manipulator`
 
-# Instructions:
+## Instructions:
 
 Clone the repo. Navigate to the cloned directory and run:
 `npm install`
