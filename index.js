@@ -43,9 +43,7 @@ discordClient.on('interactionCreate', async interaction => {
     if (commandName === 'review') {
         const artist = interaction.options.getString('artist');
         const album = interaction.options.getString('album');
-
-        // Do something with the artist and album
-        // For example, you can send a message with the provided artist and album
+        
         await interaction.deferReply({ ephemeral: false });
         const musicData = await search(artist, album);
         if(!musicData) {
