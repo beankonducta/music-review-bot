@@ -110,6 +110,7 @@ async function createReview(musicData) {
             role: 'user', content: `
         Write a pitchfork review of the following album: ${musicData.album}.
         Base the review around the score of ${randomNumberBetween0and10}.
+        Use the voice of AVGN ()
         Keep it to 2-3 sentences and at the end, after a few new lines, give 
         it a rounded score between 0 and 10,
         in the format: SCORE: ${randomNumberBetween0and10}/10.`
